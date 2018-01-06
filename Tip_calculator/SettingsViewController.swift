@@ -18,12 +18,17 @@ class SettingsViewController: UIViewController {
         print("view will appear")
         // This is a good place to retrieve the default tip percentage from UserDefaults
         // and use it to update the tip amount
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        navBar.leftBarButtonItem?.title = "Back"
+        let tipIndex = tipRate.selectedSegmentIndex
+        let defaults = UserDefaults.standard
+        
+        defaults.set(tipIndex, forKey: "myTip")
+        defaults.synchronize()
     }
 
     override func didReceiveMemoryWarning() {
