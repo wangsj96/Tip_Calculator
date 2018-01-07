@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         let tipIndex = defaults.integer(forKey: "myTip")
         tipRate.selectedSegmentIndex = tipIndex
         self.navigationController?.navigationBar.tintColor = UIColor.init(red: 0/255.0, green: 122/255.0, blue: 255/255.0, alpha: 1)
+        billField.becomeFirstResponder()
     }
     
     override func viewDidAppear(_ animated: Bool) {
