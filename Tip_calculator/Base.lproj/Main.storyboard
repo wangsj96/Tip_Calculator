@@ -52,7 +52,7 @@
                                     <segment title="25%"/>
                                 </segments>
                                 <connections>
-                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="0fx-43-S1b"/>
+                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="Jyk-9i-nho"/>
                                 </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" id="JFJ-fG-Qrx">
@@ -105,7 +105,7 @@
                         <outlet property="billField" destination="JFJ-fG-Qrx" id="zOH-e6-Pet"/>
                         <outlet property="settings" destination="hKb-L7-P28" id="1wS-kl-vqn"/>
                         <outlet property="tipLabel" destination="nvb-kZ-Ack" id="2pD-59-nrH"/>
-                        <outlet property="tipRate" destination="AjS-Np-mKg" id="w0n-1C-JQC"/>
+                        <outlet property="tipRate" destination="AjS-Np-mKg" id="RqK-si-Yl5"/>
                         <outlet property="totalLabel" destination="MBL-PC-LDg" id="XES-qH-lQu"/>
                     </connections>
                 </viewController>

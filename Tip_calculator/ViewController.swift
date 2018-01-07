@@ -23,12 +23,14 @@ class ViewController: UIViewController {
         let defaults = UserDefaults.standard
         let tipIndex = defaults.integer(forKey: "myTip")
         tipRate.selectedSegmentIndex = tipIndex
+        self.navigationController?.navigationBar.tintColor = UIColor.init(red: 0/255.0, green: 122/255.0, blue: 255/255.0, alpha: 1)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 //        settings.isEnabled = true
         print("view did appear")
+        calculateTip(self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -57,5 +59,20 @@ class ViewController: UIViewController {
 //        calculateTip(sender)
     }
 
+    @IBAction func calculateTip(_ sender: Any) {
+        let tips = [0.18, 0.2, 0.25]
+        let bill = Double(billField.text!) ?? 0
+        let tip = tips[tipRate.selectedSegmentIndex] * bill
+        let total = tip + bill
+        
+        tipLabel.text = String(format: "$%.2f", tip)
+        totalLabel.text = String(format: "$%.2f", total)
+        
+        let tipIndex = tipRate.selectedSegmentIndex
+        let defaults = UserDefaults.standard
+        
+        defaults.set(tipIndex, forKey: "myTip")
+        defaults.synchronize()
+    }
 }
 
